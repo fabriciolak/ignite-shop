@@ -44,4 +44,9 @@ export const {
       roboto: 'Roboto, sans-serif',
     },
   },
+
+  media: {
+    tablet: '(max-width: 820px)',
+    mobile: '(max-width: 480px)',
+  },
 });

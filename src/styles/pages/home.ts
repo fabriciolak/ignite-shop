@@ -7,5 +7,16 @@ export const Container = styled('main', {
   minHeight: 656,
   marginLeft: 'auto',
   marginTop: '2rem',
-  padding: '0 1.5rem',
+  paddingLeft: '1.5rem',
+
+  variants: {
+    size: {
+      tablet: {
+        padding: 0,
+      },
+      mobile: {
+        padding: 0,
+      },
+    },
+  },
 });

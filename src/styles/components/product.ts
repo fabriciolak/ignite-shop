@@ -2,12 +2,10 @@ import { styled } from '..';
 
 export const Container = styled('article', {
   position: 'relative',
-  width: '100%',
   maxWidth: 696,
-  height: 656,
 
   display: 'flex',
-  justifyContent: 'space-between',
+  justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'column',
 
@@ -15,7 +13,6 @@ export const Container = styled('article', {
   padding: '4px',
 
   background: 'linear-gradient(180deg, #1EA483 0%, #7465D4 100%)',
-  boxShadow: '0px 0px 48px rgba(0, 0, 0, 0.9)',
   overflow: 'hidden',
 
   a: {
@@ -28,14 +25,15 @@ export const Container = styled('article', {
 
   '&:hover footer': {
     display: 'flex',
-    bottom: '4px',
+    bottom: '9px',
   },
 });
 
 export const Footer = styled('footer', {
   position: 'absolute',
-  bottom: '-110px',
-  width: '43rem',
+  bottom: '-120px',
+  width: '97%',
+  // maxWidth: '43rem',
   height: '6.875rem',
   display: 'flex',
   justifyContent: 'space-between',

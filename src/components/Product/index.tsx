@@ -7,7 +7,7 @@ import { Handbag } from 'phosphor-react';
 
 export function Product() {
   return (
-    <Container>
+    <Container as="article" className="keen-slider__slide">
       <Link href="/">
         <Image width={520} height={480} src={shirt} alt="" />
       </Link>
