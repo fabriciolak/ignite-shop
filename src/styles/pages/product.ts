@@ -21,19 +21,15 @@ export const ProductImage = styled('div', {
 
   img: {
     objectFit: 'contain',
+    width: '100%',
   },
 
   variants: {
     size: {
       medium: {
-        gridTemplateColumns: '1fr',
+        display: 'flex',
+        flexDirection: 'column',
         maxWidth: '100%',
-      },
-      large: {
-        maxWidth: '30rem',
-      },
-      tablet: {
-        maxWidth: '26rem',
       },
     },
   },
@@ -55,9 +51,7 @@ export const ProductContainer = styled('div', {
         justifyContent: 'center',
         alignItems: 'center',
         maxWidth: '100%',
-      },
-      mobile: {
-        gridTemplateColumns: '420px',
+
         p: {
           textAlign: 'justify',
         },
