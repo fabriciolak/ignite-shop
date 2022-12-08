@@ -12,10 +12,8 @@ import shirt from '@/assets/shirt.svg';
 export default function Product() {
   return (
     <Container>
-      <ProductContainer size={{ '@medium': 'medium', '@mobile': 'mobile' }}>
-        <ProductImage
-          size={{ '@medium': 'medium', '@large': 'large', '@tablet': 'tablet' }}
-        >
+      <ProductContainer size={{ '@medium': 'medium' }}>
+        <ProductImage size={{ '@medium': 'medium' }}>
           <Image src={shirt} width={520} height={480} alt="" />
         </ProductImage>
 
