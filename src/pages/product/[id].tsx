@@ -1,6 +1,5 @@
 import Image from 'next/image';
 
-import { Header } from '@/components/Header';
 import {
   Container,
   ProductContainer,
@@ -13,10 +12,10 @@ import shirt from '@/assets/shirt.svg';
 export default function Product() {
   return (
     <Container>
-      <Header />
-
-      <ProductContainer>
-        <ProductImage>
+      <ProductContainer size={{ '@medium': 'medium', '@mobile': 'mobile' }}>
+        <ProductImage
+          size={{ '@medium': 'medium', '@large': 'large', '@tablet': 'tablet' }}
+        >
           <Image src={shirt} width={520} height={480} alt="" />
         </ProductImage>
 

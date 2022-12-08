@@ -46,6 +46,8 @@ export const {
   },
 
   media: {
+    large: '(max-width: 1024px)',
+    medium: '(max-width: 768px)',
     tablet: '(max-width: 820px)',
     mobile: '(max-width: 480px)',
   },
