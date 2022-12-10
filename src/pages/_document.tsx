@@ -17,14 +17,6 @@ export default function Document() {
           rel="stylesheet"
         />
 
-        <meta name="description" content="Um pequeno e-commerce de camisetas" />
-        <meta
-          name="keywords"
-          content="Ignite shop, rocketseat projetos, fabriciolak, ignite, next"
-        />
-        <meta name="author" content="Fabrício Passos" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
         <style
           id="stitches"
           dangerouslySetInnerHTML={{ __html: getCssText() }}

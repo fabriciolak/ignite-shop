@@ -22,6 +22,7 @@ export const ProductImage = styled('div', {
   img: {
     objectFit: 'contain',
     width: '100%',
+    height: 'auto',
   },
 
   variants: {
