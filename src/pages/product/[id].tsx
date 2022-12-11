@@ -12,6 +12,9 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { stripe } from '@/lib/stripe';
 import Stripe from 'stripe';
 import Head from 'next/head';
+import useCart from '@/hooks/useCart';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 interface ProductProps {
   product: {
@@ -26,6 +29,43 @@ interface ProductProps {
 }
 
 export default function Product({ product }: ProductProps) {
+  const { cart, addProductToCart } = useCart();
+  const [productExists, setProductExists] = useState<boolean>(false);
+  const [creatingCheckout, setCreatingCheckout] = useState<boolean>(false);
+
+  const productId = product?.id;
+
+  useEffect(() => {
+    const x = cart.find((product) => product.id === productId);
+    if (x) {
+      setProductExists(true);
+    } else {
+      setProductExists(false);
+    }
+  }, [cart, productId]);
+
+  async function handleBuyProduct() {
+    try {
+      setCreatingCheckout(true);
+
+      const response = await axios.post('/api/checkout', {
+        cart: cart.map((product) => {
+          return {
+            price: product.defaultPriceId,
+            quantity: 1,
+          };
+        }),
+      });
+
+      const { checkoutUrl } = response.data;
+
+      window.location.href = checkoutUrl;
+    } catch (error) {
+      setCreatingCheckout(false);
+      console.log(error);
+    }
+  }
+
   return (
     <>
       <Head>
@@ -52,7 +92,18 @@ export default function Product({ product }: ProductProps) {
               <p>{product?.description}</p>
             </div>
 
-            <button>Colocar na sacola</button>
+            <button
+              onClick={() => {
+                if (productExists) handleBuyProduct();
+
+                addProductToCart(product);
+              }}
+              disabled={creatingCheckout}
+            >
+              {creatingCheckout
+                ? 'aguarde'
+                : `${productExists ? 'Comprar' : 'Colocar na sacola'}`}
+            </button>
           </ProductContent>
         </ProductContainer>
       </Container>

@@ -105,5 +105,11 @@ export const ProductContent = styled('div', {
     fontSize: '$18',
     fontWeight: '$bold',
     lineHeight: 1.6,
+    cursor: 'pointer',
+
+    '&:disabled': {
+      opacity: 0.6,
+      cursor: 'not-allowed',
+    },
   },
 });
