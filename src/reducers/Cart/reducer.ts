@@ -26,6 +26,12 @@ export function CartReducer(
 ) {
   switch (action.type) {
     case ActionType.ADD_TO_CART: {
+      const alreadyExists = state.cart.find(
+        (product) => product.id === action.payload.product.id,
+      );
+
+      if (alreadyExists) return state;
+
       return produce(state, (draft) => {
         draft.cart.push(action.payload.product);
       });
