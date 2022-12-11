@@ -29,8 +29,8 @@ export default function Product({ product }: ProductProps) {
   return (
     <>
       <Head>
-        <title>{product.name} | Ingite Shop</title>
-        <meta name="description" content={product.description} />
+        <title>{product?.name} | Ingite Shop</title>
+        <meta name="description" content={product?.description} />
       </Head>
       <Container>
         <ProductContainer size={{ '@medium': 'medium' }}>
