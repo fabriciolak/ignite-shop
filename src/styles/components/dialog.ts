@@ -157,5 +157,10 @@ export const DialogFooter = styled('footer', {
     fontWeight: 700,
     lineHeight: 1.6,
     color: '$white',
+
+    '&:disabled': {
+      opacity: 0.6,
+      cursor: 'not-allowed',
+    },
   },
 });

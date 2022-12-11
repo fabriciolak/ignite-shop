@@ -11,6 +11,7 @@ import {
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { stripe } from '@/lib/stripe';
 import Stripe from 'stripe';
+import Head from 'next/head';
 
 interface ProductProps {
   product: {
@@ -26,30 +27,36 @@ interface ProductProps {
 
 export default function Product({ product }: ProductProps) {
   return (
-    <Container>
-      <ProductContainer size={{ '@medium': 'medium' }}>
-        <ProductImage size={{ '@medium': 'medium' }}>
-          <Image
-            src={product?.imageUrl}
-            width={520}
-            height={480}
-            alt=""
-            priority
-          />
-        </ProductImage>
+    <>
+      <Head>
+        <title>{product.name} | Ingite Shop</title>
+        <meta name="description" content={product.description} />
+      </Head>
+      <Container>
+        <ProductContainer size={{ '@medium': 'medium' }}>
+          <ProductImage size={{ '@medium': 'medium' }}>
+            <Image
+              src={product?.imageUrl}
+              width={520}
+              height={480}
+              alt=""
+              priority
+            />
+          </ProductImage>
 
-        <ProductContent>
-          <div>
-            <h1>{product?.name}</h1>
-            <span>{product?.formattedPrice}</span>
+          <ProductContent>
+            <div>
+              <h1>{product?.name}</h1>
+              <span>{product?.formattedPrice}</span>
 
-            <p>{product?.description}</p>
-          </div>
+              <p>{product?.description}</p>
+            </div>
 
-          <button>Colocar na sacola</button>
-        </ProductContent>
-      </ProductContainer>
-    </Container>
+            <button>Colocar na sacola</button>
+          </ProductContent>
+        </ProductContainer>
+      </Container>
+    </>
   );
 }
 

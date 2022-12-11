@@ -27,6 +27,17 @@ export const Container = styled('article', {
     display: 'flex',
     bottom: '9px',
   },
+
+  variants: {
+    size: {
+      tablet: {
+        footer: {
+          display: 'flex',
+          bottom: '9px',
+        },
+      },
+    },
+  },
 });
 
 export const Footer = styled('footer', {

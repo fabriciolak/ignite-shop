@@ -21,7 +21,11 @@ export function Product({ product }: ProductProps) {
   const { addProductToCart } = useCart();
 
   return (
-    <Container as="article" className="keen-slider__slide">
+    <Container
+      as="article"
+      className="keen-slider__slide"
+      size={{ '@tablet': 'tablet' }}
+    >
       <Link href={`/product/${product.id}`}>
         <Image width={520} height={480} src={product.imageUrl} alt="" />
       </Link>

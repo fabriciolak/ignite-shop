@@ -13,7 +13,7 @@ export const ProductImage = styled('div', {
   position: 'relative',
   width: '100%',
   maxWidth: '36rem',
-  minHeight: 656,
+  minHeight: 496,
   borderRadius: 8,
   display: 'flex',
   justifyContent: 'center',

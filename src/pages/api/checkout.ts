@@ -5,7 +5,7 @@ export default async function checkout(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  // const {  } = req.body
+  const { cart } = req.body;
 
   const cancelUrl = `${process.env.NEXT_URL}/`;
   const successUrl = `${process.env.NEXT_URL}/success?session_id={CHECKOUT_SESSION_ID}`;
@@ -14,12 +14,7 @@ export default async function checkout(
     cancel_url: cancelUrl,
     success_url: successUrl,
     mode: 'payment',
-    line_items: [
-      {
-        price: 'price_1M86yiEUs3AELVLmWvkHZXfY',
-        quantity: 1,
-      },
-    ],
+    line_items: cart,
   });
 
   return res.status(201).json({
