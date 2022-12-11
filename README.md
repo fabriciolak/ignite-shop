@@ -2,7 +2,7 @@
   <img src="./src/assets/readme/capa.png" />
 </div>
 
-<h1 align="center" style="display: flex; align-items: center; justify-content: center; gap: 1rem;">Ignite Shop - Ignite <img src="./src/assets/readme/ignite-logo.svg" width="28px" /></h1>
+<h1 align="center" style="display: flex; align-items: center; justify-content: center; gap: 1rem;">Ignite Shop - Ignite</h1>
 
 <h4 align="center">
   Desafio do Ignite feito no quarto módulo da trilha de ReactJS.
@@ -16,52 +16,50 @@
 
 ## 👨‍💻 Projeto
 
-Foi usado no projeto Vite + React + Typescript onde foi desenvolvido uma cafeteria fictícia que é possível o usuário escolher diferentes estilos de cafés e adicionar em um carrinho de compras onde será solicitado o preenchimento para entrega.
+Foi usado no projeto Next + Typescript onde foi desenvolvido um mini e-commerce para vender camisetas customizadas da Rocketseat. Utilizamos a aplicação desenvolvida na trilha para implementar um carrinho que utilizará os dados da API do Stripe para buscar os itens existentes, e controlará, através da aplicação, os itens que a usuário deseja comprar.
 
 O projeto foi desenvolvido usando um layout fornecido pela Rocketseat, para que fosse possível seguir e implementar as funcionalidades e o design desenhadas no Figma.
-
-A aplicação foi proposta para fixar alguns conceitos passados no módulo do projeto, como: States; Context API; LocalStorage; Immutability; List & Keys no React; Properties; Componentization.
 
 ## 🧪 Tecnologias
 Foram usadas as seguintes tecnologias:
 
-  - ViteJS
+  - Next 13
   - Typescript
-  - ReactJS
   - Eslint
+  - Prettier
+  - Commitlint
+  - Husky
+  - Lint-Staged
   - Phosphor Icons
-  - React Hook Form
-  - React Router
-  - Styled Components
+  - Context API
+  - Next Routing
+  - Stitches
 
 ## 🧑‍🔧 Funcionalidades
 Algumas das funcionalidades propostas no desafio
-  - Listagem de produtos (cafés) disponíveis para compra
-  - Adicionar uma quantidade específicas de itens no carrinho
-  - Aumentar ou remover a quantidade de itens no carrinho
-  - Formulário para preenchimento do endereço
-  - Exibir o total de itens no carrinho no Cabeçalho
-  - Exibir o valor total da soma dos itens no carrinho multiplicados pelo valor
+  - Adicionar um ou mais itens no carrinho;
+  - Salvar todos os itens selecionados no carrinho, e exibir o número de itens no carrinho;
+  - Utilizar os itens do carrinho para gerar um checkout usando stripe;
 
 ## 🚀 Como executar
 
 Faça um clone do projeto e acesse a pasta criada.
 
 ```
-  $ git clone https://github.com/fabriciolak/coffee-delivery.git
-  $ cd coffee-delivery
+  $ git clone https://github.com/fabriciolak/ignite-shop.git
+  $ cd ignite-shop
 ```
 Para iniciá-lo, siga os passos abaixo:
 
 ## 👾 Instalar as dependências
-Aliases: ``` i ```
+Aliases: ``` install ```
 ```
-  $ pnpm install
+  $ yarn
 ```
 
 ## 😎 Iniciar o projeto
 ```
-  $ pnpm dev
+  $ yarn dev
 ```
 A aplicação estará disponível no endereço http://localhost:3000.
 
@@ -70,7 +68,7 @@ Acesse o layout do desafio
 
 Criado com Figma.
 
-<a href="https://www.figma.com/file/ewcmQhaPxFVbRF22VWxa98/Coffee-Delivery-(Copy)?node-id=0%3A1" target="_blank">Coffee Delivery</a>
+<a href="https://www.figma.com/file/kJX0eJI4OLxasc9ALO2LvQ/Ignite-Shop-2.0-(Copy)" target="_blank">Ignite Shop</a>
 
 
 <h1 align="center">
