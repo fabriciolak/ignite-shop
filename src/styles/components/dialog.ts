@@ -59,7 +59,7 @@ export const DialogItem = styled('div', {
   gap: '1.25rem',
   height: '94px',
 
-  header: {
+  '.dialog-item-image': {
     width: '101.94px',
     height: '93px',
     display: 'flex',
@@ -80,6 +80,19 @@ export const DialogItem = styled('div', {
     flexDirection: 'column',
     justifyContent: 'space-between',
 
+    '.dialog-item-content': {
+      p: {
+        fontSize: '$18',
+        lineHeight: 1.6,
+      },
+      span: {
+        fontSize: '$18',
+        fontWeight: 700,
+        lineHeight: 1.6,
+        color: '$title',
+      },
+    },
+
     button: {
       width: '4.0625rem',
       border: 0,
@@ -89,19 +102,6 @@ export const DialogItem = styled('div', {
       cursor: 'pointer',
       color: '$green',
       background: 'transparent',
-    },
-  },
-
-  '.dialog-item-content': {
-    p: {
-      fontSize: '$18',
-      lineHeight: 1.6,
-    },
-    span: {
-      fontSize: '$18',
-      fontWeight: 700,
-      lineHeight: 1.6,
-      color: '$title',
     },
   },
 });
