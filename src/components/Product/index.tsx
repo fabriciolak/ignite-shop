@@ -3,34 +3,36 @@ import Image from 'next/image';
 import { Container, Footer } from '@/styles/components/product';
 import Link from 'next/link';
 import { Handbag } from 'phosphor-react';
-import { Url } from 'url';
+import useCart from '@/hooks/useCart';
 
 interface ProductProps {
-  name: string;
-  imageUrl: string;
-  formattedPrice: string;
-  link: Url | string;
+  product: {
+    id: string;
+    name: string;
+    price: number;
+    description: string;
+    imageUrl: string;
+    formattedPrice: string;
+    defaultPriceId: string;
+  };
 }
 
-export function Product({
-  formattedPrice,
-  link,
-  imageUrl,
-  name,
-}: ProductProps) {
+export function Product({ product }: ProductProps) {
+  const { addProductToCart } = useCart();
+
   return (
     <Container as="article" className="keen-slider__slide">
-      <Link href={link}>
-        <Image width={520} height={480} src={imageUrl} alt="" />
+      <Link href={`/product/${product.id}`}>
+        <Image width={520} height={480} src={product.imageUrl} alt="" />
       </Link>
 
       <Footer>
         <div>
-          <h2>{name}</h2>
-          <span>{formattedPrice}</span>
+          <h2>{product.name}</h2>
+          <span>{product.formattedPrice}</span>
         </div>
 
-        <button>
+        <button onClick={() => addProductToCart(product)}>
           <Handbag weight="bold" size={32} />
         </button>
       </Footer>

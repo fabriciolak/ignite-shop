@@ -20,7 +20,6 @@ interface ProductProps {
 }
 
 export default function Home({ products }: ProductProps) {
-  // console.log(products);
   const [sliderRef] = useKeenSlider({
     mode: 'free-snap',
     slides: {
@@ -52,13 +51,7 @@ export default function Home({ products }: ProductProps) {
         size={{ '@mobile': 'mobile', '@tablet': 'tablet' }}
       >
         {products?.map((prod) => (
-          <Product
-            key={prod?.id}
-            formattedPrice={prod.formattedPrice}
-            link={`/product/${prod.id}`}
-            imageUrl={prod.imageUrl}
-            name={prod.name}
-          />
+          <Product key={prod?.id} product={prod} />
         ))}
       </Container>
     </div>

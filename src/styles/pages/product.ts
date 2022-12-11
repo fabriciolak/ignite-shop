@@ -10,6 +10,7 @@ export const Container = styled('div', {
 });
 
 export const ProductImage = styled('div', {
+  position: 'relative',
   width: '100%',
   maxWidth: '36rem',
   minHeight: 656,
